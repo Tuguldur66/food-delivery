@@ -1,4 +1,5 @@
 "use client";
+import { Label } from "@/components/ui/label";
 import {
   Dialog,
   DialogContent,
@@ -8,14 +9,18 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { LoaderCircle, Plus } from "lucide-react";
-import { useState } from "react";
+import { ChangeEventHandler, useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-export function addCategory() {
+export function AddCategory() {
   const [open, setOpen] = useState(false);
-  const [categoryName, setCategoryName] = useState();
+  const [categoryName, setCategoryName] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const onChange = (event) => {
+  const onChange: ChangeEventHandler<HTMLInputElement, HTMLInputElement> = (
+    event,
+  ) => {
     setCategoryName(event.target.value);
   };
 
@@ -41,27 +46,27 @@ export function addCategory() {
 
   return (
     <div>
-      <Dialog open={open} onChange={setOpen}>
+      <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <div classname="w-9 h-9 bg-red-500 flex justify center items-center rounded-full text-white">
+          <div className="w-9 h-9 bg-red-500 flex justify center items-center rounded-full text-white">
             <Plus size={16} />
           </div>
         </DialogTrigger>
-        <DialogContent classname="sm:max-w-md">
+        <DialogContent className="sm:max-w-md">
           <DialogHeader>
             <DialogTitle>Add new category</DialogTitle>
           </DialogHeader>
-          <div classname="flex items-center gap-2">
-            <div classname="grid flex-1 gap-2">
+          <div className="flex items-center gap-2">
+            <div className="grid flex-1 gap-2">
               <Label>Category name</Label>
               <Input type="text" onChange={onChange} />
             </div>
           </div>
 
-          <DialogFooter classname="sm:justify-end">
+          <DialogFooter className="sm:justify-end">
             <Button type="button" onClick={onAddCategory} disabled={loading}>
               {loading ? (
-                <LoaderCircle classname="animate-spin" />
+                <LoaderCircle className="animate-spin" />
               ) : (
                 "Add category"
               )}
