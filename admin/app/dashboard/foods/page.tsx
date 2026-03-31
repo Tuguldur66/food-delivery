@@ -1,13 +1,20 @@
 import { Badge } from "@/components/ui/badge";
-import { AddCategory } from "./addCategories";
-import { FoodAddDialog } from "./foodAddDialog";
+import { AddCategory } from "./components/addCategories";
+import { FoodAddDialog } from "./components/foodAddDialog";
+import { Categories } from "./components/categories";
+import { getFoods } from "@/app/api/foods/get-foods";
+import { getCategories } from "@/app/api/foods/get-category";
 
-export default function FoodsPage() {
+export default async function FoodsPage() {
+  const categories = await getCategories();
+
+  console.log(categories);
+
   return (
     <div>
-      <Badge variant="outline">Badge</Badge>
+      <Categories categories={categories} />
       <AddCategory />
-      <FoodAddDialog />
+      <FoodAddDialog categories={categories} />
     </div>
   );
 }

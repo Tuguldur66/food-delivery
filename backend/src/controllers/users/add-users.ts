@@ -3,7 +3,7 @@ import { prisma } from "../../../lib/prisma";
 import bcrypt from "bcrypt";
 
 export const addUsers = async (req: Request, res: Response) => {
-  const { email, password, age, phoneNumber } = req.body;
+  const { email, password } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -11,8 +11,6 @@ export const addUsers = async (req: Request, res: Response) => {
     data: {
       email,
       password: hashedPassword,
-      age,
-      phoneNumber,
     },
   });
 

@@ -7,7 +7,7 @@ import { adminMidlleware } from "../middleware/admin-middleware";
 
 const userRouter = express.Router();
 
-userRouter.get("/users", authMidlleware, adminMidlleware, getUsers);
+userRouter.get("/users", getUsers);
 userRouter.post("/users", addUsers);
 userRouter.post("/users/login", login);
 export default userRouter;
