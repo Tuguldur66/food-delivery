@@ -48,7 +48,7 @@ export function AddCategory() {
     <div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <div className="w-9 h-9 bg-red-500 flex justify center items-center rounded-full text-white">
+          <div className="w-9 h-9 bg-red-500 flex justify-center items-center rounded-full text-white ">
             <Plus size={16} />
           </div>
         </DialogTrigger>

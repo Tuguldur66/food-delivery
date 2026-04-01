@@ -6,11 +6,11 @@ import { singIn } from "./dashboard/auth/sing-in";
 
 export default function Home() {
   return (
-    <div className="w-[1440px] mx-auto h-screen flex justify-between">
+    <div className="w-360 mx-auto h-screen flex justify-between">
       <div>
         <SignIn />
       </div>
-      <div className="w-[900px] overflow-hidden rounded-4xl">
+      <div className="w-225 overflow-hidden rounded-4xl">
         <img
           src="/images/img.svg"
           height="100%"

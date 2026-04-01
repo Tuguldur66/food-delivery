@@ -8,6 +8,6 @@ import { adminMidlleware } from "../middleware/admin-middleware";
 const foodRouter = express.Router();
 
 foodRouter.get("/foods", getFoods);
-foodRouter.post("/foods", authMidlleware, adminMidlleware, addFood);
+foodRouter.post("/foods", addFood);
 foodRouter.delete("/foods/:id", authMidlleware, adminMidlleware, deleteFood);
 export default foodRouter;

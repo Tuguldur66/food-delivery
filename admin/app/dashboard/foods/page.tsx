@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { AddCategory } from "./components/addCategories";
 import { FoodAddDialog } from "./components/foodAddDialog";
 import { Categories } from "./components/categories";
@@ -12,8 +11,10 @@ export default async function FoodsPage() {
 
   return (
     <div>
-      <Categories categories={categories} />
-      <AddCategory />
+      <div className="flex flex-row gap-4">
+        <Categories categories={categories} />
+        <AddCategory />
+      </div>
       <FoodAddDialog categories={categories} />
     </div>
   );
