@@ -12,11 +12,13 @@ import { LoaderCircle, Plus } from "lucide-react";
 import { ChangeEventHandler, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 export function AddCategory() {
   const [open, setOpen] = useState(false);
   const [categoryName, setCategoryName] = useState("");
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const onChange: ChangeEventHandler<HTMLInputElement, HTMLInputElement> = (
     event,
@@ -37,6 +39,7 @@ export function AddCategory() {
         },
         body: JSON.stringify(postBody),
       });
+      router.refresh();
       setOpen(false);
     } catch (error) {
       console.log(error);

@@ -6,14 +6,17 @@ import { getCategories } from "@/app/api/foods/get-category";
 
 export default async function FoodsPage() {
   const categories = await getCategories();
-
-  console.log(categories);
+  const foods = await getFoods();
 
   return (
-    <div>
-      <div className="flex flex-row gap-4">
-        <Categories categories={categories} />
-        <AddCategory />
+    <div className="bg-gray-100 w-screen h-screen ">
+      <div className=" ">
+        <div className="h-59 ml-6 mt-6 mr-10 ">
+          <div className="flex flex-row gap-2">
+            <Categories categories={categories} />
+            <AddCategory />
+          </div>
+        </div>
       </div>
       <FoodAddDialog categories={categories} />
     </div>

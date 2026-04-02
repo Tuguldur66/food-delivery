@@ -1,4 +1,5 @@
 import { Category } from "@/app/types/category";
+import { revalidatePath } from "next/cache";
 
 export interface GetCategoriesResponse {
   message: string;
