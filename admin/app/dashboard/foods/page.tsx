@@ -10,9 +10,9 @@ export default async function FoodsPage() {
 
   return (
     <div className="bg-gray-100 w-screen h-screen ">
-      <div className=" ">
-        <div className="h-59 ml-6 mt-6 mr-10 ">
-          <div className="flex flex-row gap-2">
+      <div className="">
+        <div className=" ml-6 mt-6 mr-10 flex align-bottom h-59 w-292.75 ">
+          <div className="flex flex-row gap-2 h-44 w-297.5 bg-white">
             <Categories categories={categories} />
             <AddCategory />
           </div>
