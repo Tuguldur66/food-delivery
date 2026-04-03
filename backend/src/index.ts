@@ -1,10 +1,9 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
-
-import foodRouter from "./router/foods.route";
 import userRouter from "./router/users.route";
 import categoryRouter from "./router/foodCategory.route";
 import orderRouter from "./router/foodOrder.route";
+import foodRouter from "./router/foods.route";
 
 const app = express();
 const port = 3001;
