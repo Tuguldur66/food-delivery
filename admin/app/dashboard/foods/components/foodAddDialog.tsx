@@ -16,8 +16,8 @@ import { Label } from "@/components/ui/label";
 import { Category } from "@/app/types/category";
 import { ChangeEventHandler, useState } from "react";
 import { CategorySelector } from "./categorySelector";
-import { Food } from "@/app/types/food";
 import { FoodForm } from "@/app/types/foodForm";
+import { CldUpload } from "./cldupload";
 
 type FoodAddDialogProps = {
   categories: Category[];
@@ -87,6 +87,10 @@ export function FoodAddDialog(props: FoodAddDialogProps) {
               name="price"
               onChange={handleChange}
             />
+          </div>
+          <div className="flex">
+            <Label className="min-w-30">Image</Label>
+            <CldUpload />
           </div>
         </div>
         <DialogFooter className="sm:justify-start">

@@ -19,11 +19,11 @@ export function CategorySelector(props: CategorySelectorProps) {
   return (
     <Select onValueChange={(value) => onSelect(Number(value))}>
       <SelectTrigger className="w-full max-w-48">
-        <SelectValue placeholder="Select a fruit" />
+        <SelectValue placeholder="Select a category" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>Categories</SelectLabel>
           {categories.map((category) => {
             return (
               <SelectItem key={category.id} value={String(category.id)}>
